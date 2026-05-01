@@ -10,6 +10,8 @@ Before writing any code, always check the `docs/` directory for a relevant stand
 
 - `docs/ui.md` — UI coding standards (component library, date formatting)
 - `docs/data-fetching.md` — Data fetching standards (server components, query helpers, data ownership)
+- `docs/data-mutations.md` — Data mutation standards (server actions, helper functions, Zod validation)
+- `docs/auth.md` — Auth standards (Clerk provider, middleware, server auth, UI components)
 
 ## Commands
 
