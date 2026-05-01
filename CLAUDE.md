@@ -9,6 +9,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 Before writing any code, always check the `docs/` directory for a relevant standards document and follow it. Current docs:
 
 - `docs/ui.md` — UI coding standards (component library, date formatting)
+- `docs/data-fetching.md` — Data fetching standards (server components, query helpers, data ownership)
 
 ## Commands
 
