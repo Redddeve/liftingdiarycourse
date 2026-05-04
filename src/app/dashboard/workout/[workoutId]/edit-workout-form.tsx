@@ -41,6 +41,7 @@ export function EditWorkoutForm({ workout }: EditWorkoutFormProps) {
     startTransition(async () => {
       try {
         await updateWorkoutAction(workout.id, { name, loggedAt });
+        router.push('/dashboard');
       } catch {
         setError('Something went wrong. Please try again.');
       }
