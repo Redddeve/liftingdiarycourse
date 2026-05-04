@@ -7,6 +7,7 @@ import {
   Show,
   UserButton,
 } from '@clerk/nextjs';
+import { Button } from '@/components/ui/button';
 import './globals.css';
 
 const inter = Inter({
@@ -31,14 +32,21 @@ export default function RootLayout({
     >
       <body className="font-(family-name:--font-inter) min-h-full flex flex-col">
         <ClerkProvider>
-          <header className="flex gap-4 p-4">
-            <Show when="signed-out">
-              <SignInButton mode="modal" />
-              <SignUpButton mode="modal" />
-            </Show>
-            <Show when="signed-in">
-              <UserButton />
-            </Show>
+          <header className="flex items-center justify-between px-6 py-3 border-b border-border">
+            <span className="text-lg font-bold tracking-tight">Lifting Diary</span>
+            <div className="flex items-center gap-2">
+              <Show when="signed-out">
+                <SignInButton mode="modal">
+                  <Button variant="outline" size="sm">Sign In</Button>
+                </SignInButton>
+                <SignUpButton mode="modal">
+                  <Button size="sm">Sign Up</Button>
+                </SignUpButton>
+              </Show>
+              <Show when="signed-in">
+                <UserButton />
+              </Show>
+            </div>
           </header>
           {children}
         </ClerkProvider>
