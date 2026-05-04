@@ -3,6 +3,7 @@
 import { useState, useTransition } from 'react';
 import { useRouter } from 'next/navigation';
 import { format } from 'date-fns';
+import { isRedirectError } from 'next/dist/client/components/redirect-error';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -41,7 +42,8 @@ export function EditWorkoutForm({ workout }: EditWorkoutFormProps) {
     startTransition(async () => {
       try {
         await updateWorkoutAction(workout.id, { name, loggedAt });
-      } catch {
+      } catch (err) {
+        if (isRedirectError(err)) return;
         setError('Something went wrong. Please try again.');
       }
     });

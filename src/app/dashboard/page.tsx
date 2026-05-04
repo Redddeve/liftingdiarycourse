@@ -18,7 +18,11 @@ function WorkoutCard({ workout }: { workout: WorkoutWithDetails }) {
     <Card>
       <CardHeader className="pb-3">
         <div className="flex items-center justify-between">
-          <CardTitle className="text-base">{workout.name}</CardTitle>
+          <CardTitle className="text-base">
+            <Link href={`/dashboard/workout/${workout.id}`} className="hover:underline">
+              {workout.name}
+            </Link>
+          </CardTitle>
           <Badge variant={workout.completedAt ? 'default' : 'secondary'}>
             {workout.completedAt ? 'Completed' : 'In progress'}
           </Badge>
