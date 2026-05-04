@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} h-full antialiased`}
+      className={`${inter.variable} dark h-full antialiased`}
     >
       <body className="font-(family-name:--font-inter) min-h-full flex flex-col">
         <ClerkProvider>
