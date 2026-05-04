@@ -26,6 +26,4 @@ export async function updateWorkoutAction(
     name: parsed.data.name,
     loggedAt: new Date(parsed.data.loggedAt),
   });
-
-  redirect('/dashboard');
 }
