@@ -5,6 +5,8 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { getWorkoutsForDate, type WorkoutWithDetails } from '@/data/workouts';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 import { DatePicker } from './date-picker';
 
 interface PageProps {
@@ -62,9 +64,14 @@ export default async function DashboardPage({ searchParams }: PageProps) {
     <main className="max-w-5xl mx-auto w-full px-6 py-8">
       <h1 className="text-2xl font-bold mb-6">Dashboard</h1>
 
-      <Suspense>
-        <DatePicker date={date} />
-      </Suspense>
+      <div className="flex items-center gap-3">
+        <Suspense>
+          <DatePicker date={date} />
+        </Suspense>
+        <Button asChild>
+          <Link href="/dashboard/workout/new">Create new workout</Link>
+        </Button>
+      </div>
 
       <div className="mt-6">
         {userWorkouts.length === 0 ? (

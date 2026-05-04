@@ -12,6 +12,7 @@ Before writing any code, always check the `docs/` directory for a relevant stand
 - `docs/data-fetching.md` — Data fetching standards (server components, query helpers, data ownership)
 - `docs/data-mutations.md` — Data mutation standards (server actions, helper functions, Zod validation)
 - `docs/auth.md` — Auth standards (Clerk provider, middleware, server auth, UI components)
+- `docs/routing.md` — Routing standards (route structure, protected /dashboard routes, middleware)
 
 ## Commands
 
